@@ -34,16 +34,22 @@ python3 cli.py --shell-execution
     对话模式
 
  You: 解释Python装饰器
+
+
  Assistant: 自动渲染的Markdown回答...
 
     命令执行
 
  You: !ls -la
+
+
  Assistant: 执行命令结果...
 
     加载文件
 
  You: /load assistant.py
+
+
  Assistant: 加载文件内容到上下文
 
 
