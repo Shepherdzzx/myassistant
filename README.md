@@ -56,6 +56,12 @@ python3 cli.py --shell-execution
 ## 🛠️ 命令列表
 
  • /exit - 退出程序
+
+
  • /clear - 清除对话历史
+
+
  • /history - 查看对话历史
+
+
  • /load <文件路径> - 加载代码文件
