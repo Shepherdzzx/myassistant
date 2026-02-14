@@ -24,6 +24,7 @@ MANIFEST
 .env
 .config
 *.log
+venv/
 
 # IDE
 .idea/

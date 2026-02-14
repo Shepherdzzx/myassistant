@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shell-assistant"                 
+version = "0.1.0"                        
+description = "一个带AI向量记忆的Shell助手"
+readme = "README.md"                      
+requires-python = ">=3.10"                
+license = {text = "MIT"}              
+authors = [
+    {name = "Shepherdz", email = "1351206177@qq.com"}
+]
+keywords = ["shell", "ai", "assistant", "vector", "openrouter"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [                            
+    "requests>=2.28",
+    "chromadb>=0.5",
+    "openai>=1.0",
+    "rich>=13.0",
+    "dashscope>=1.0",                        
+]
+
+[project.scripts]
+shell-assistant = "cli:main"       
+
+[project.urls]
+Homepage = "https://github.com/Shepherdzzx/myassistant"
+Repository = "https://github.com/Shepherdzzx/myassistant"
