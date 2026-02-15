@@ -6,6 +6,7 @@ from typing import Any, Dict, List, Optional
 
 from chromadb import PersistentClient
 from openai import OpenAI
+from typing_extensions import NoDefault
 
 
 class VectorMemory:
@@ -176,11 +177,13 @@ class VectorMemory:
         query_embedding = self._get_embedding(query)
 
         # 构建查询条件
-        where_clause = {}
-        if filter_role:
-            where_clause["role"] = filter_role
-        if filter_type:
-            where_clause["type"] = filter_type
+        where_clause = None
+        if filter_role or filter_type:
+            where_clause = {}
+            if filter_role:
+                where_clause["role"] = filter_role
+            if filter_type:
+                where_clause["type"] = filter_type
 
         # 执行查询
         results = self.collection.query(

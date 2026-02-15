@@ -351,14 +351,21 @@ class ShellAssistant:
         self.history.append({"role": "user", "content": enhanced_prompt})
 
         response = ""
-        print("Assistant: ", end="", flush=True)
+        # print("Assistant: ", end="", flush=True)
 
         # 4. 流式获取响应
         full_response = ""
+        print("Assistant: ", end="", flush=True)
         for chunk in self._stream_response(self.history):
             full_response += chunk
             print(chunk, end="", flush=True)
         print()
+        if RICH_AVAILABLE and self.console:
+            try:
+                self.console.print(Markdown(full_response))
+            except Exception as e:
+                print(f"Markdown rendering failed: {e}")
+                pass
 
         # 5. 存储到向量记忆
         if self.enable_vector_memory:
